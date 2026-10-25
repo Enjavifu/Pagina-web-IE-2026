@@ -1,143 +1,697 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-/* --- Estilos Generales --- */
-body {
-    font-family: sans-serif;
-    margin: 70px;
-    margin-top:0;
-    padding: 2em;
-    background-color: #f4f4f4;
+/* --- Configuración Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* 1. Ramabhadra para el fondo y textos normales */
+#cuerpo-principal {
+    font-family: "Ramabhadra", sans-serif;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+}
 
+/* 2. Archivo Black EXCLUSIVAMENTE para los títulos */
 h1, h2 {
-    font-family: 'Space Mono';
-    color: #333;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
 }
 
-h3{
-    font-family: 'Open Sans';
-    font-size: 1em;
+/* 3. Ramabhadra forzado para los botones */
+button {
+    font-family: "Ramabhadra", sans-serif;
 }
 
-/* --- Contenedor Principal --- */
-#container {
-    display: grid;
-    /* Define 2 columnas: la primera ocupa 1 fracción, la segunda 2 fracciones */
-    grid-template-columns: 1fr 2fr;
-    gap: 5em; /* Espacio entre las columnas */
-    align-items: start; /* Alinea los items al inicio */
+/* --- 1ra Sección: Hero --- */
+#seccion-inicio {
+    width: 100%;
+    height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    background-color: #000000;
+    color: #FFFFFF;
+    position: relative; /* Permite posicionar las figuras absolutas en su interior */
+    overflow: hidden;
 }
 
-/* --- Columna Izquierda: Intro --- */
-.intro {
-    /* Por defecto, se ubica en la primera columna del grid */
+#titulo-inicio {
+    position: absolute;
+    left: 100px; /* Borde izquierdo de 100px */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px;
+    font-weight: normal;
+    line-height: 1.1;
+    z-index: 10;
+}
+
+#autor-inicio {
+    position: absolute;
+    right: 100px; /* Borde derecho de 100px */
+    bottom: 80px;
+    font-size: 24px;
+    z-index: 10;
+}
+
+#rectangulo-gris-oscuro {
+    position: absolute;
+    width: 35vw;
+    height: 60vh;
+    background-color: #6E6E6E; /* Gris oscuro solicitado */
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#rectangulo-gris-claro {
+    position: absolute;
+    width: 35vw;
+    height: 25vh;
+    background-color: #D9D9D9; /* Gris claro solicitado */
+    bottom: 0;
+    left: 25vw;
+    z-index: 1;
+}
+
+/* --- 2da Sección: Alexander Hamilton --- */
+#seccion-hamilton {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFFFFF; /* Cambio a fondo blanco */
+    color: #000000;
+    position: relative;
     display: flex;
-    flex-direction: column; /* Organiza los elementos internos en una columna */
-    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-.intro p {
-    /* El párrafo ya usa el ancho de su contenedor por defecto */
-    font-family: 'Open Sans';
-    text-align: justify;
-    line-height: 1.6;
+#imagen-hamilton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90vh; /* Ajustable según el tamaño de tu PNG */
+    object-fit: contain;
+    z-index: 1;
 }
 
-.intro a {
-    /* El ancla del botón se centrará gracias al 'align-self' */
-    align-self: center; /* Centra este elemento específico en el eje transversal */
-    margin-top: 1em;
+#contenedor-texto-hamilton {
+    margin-left: 100px; /* Borde izquierdo de 100px */
+    max-width: 500px;
+    z-index: 10;
 }
 
-.intro button {
-    font-family: 'Space Mono';
-    font-size: 1em;
-    padding: 60px 45px;
-    margin-top: 30px;
+#titulo-hamilton {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+#parrafo-hamilton {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-hamilton {
+    width: 200px;
+    height: 53px;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    font-size: 14px;
     border: none;
-    background-color: #a588f4;
-    color: #000;
- 
+    border-radius: 8px; /* Leve redondeo típico de botones de diseño */
     cursor: pointer;
-    border-radius: 50px;
-    
+    transition: background-color 0.3s ease;
 }
 
-.intro button:hover {
-    background: #000; ;
-    color: white;
+#boton-hamilton:hover {
+    background-color: #6E6E6E;
+}
 
+#enlace-hamilton {
+    text-decoration: none;
+}
+/* --- Animaciones Reutilizables --- */
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes latido-regular {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.20); }
+    100% { transform: scale(1); }
+}
+
+@keyframes latido-acelerado {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotacion-rapida {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 
-/* Columna Derecha: Proyectos */
-.proyectos {
+/* --- 3ra Sección: ¡Boom! --- */
+#seccion-boom {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #FFFFFF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Nueva animación exclusiva para que crezca mucho más */
+@keyframes latido-boom {
+    0% { transform: scale(0.5)}
+    50% { transform: scale(0.8)} 
+    100% { transform: scale(0.5)}
+}
+
+#circulo-boom {
+    position: absolute;
+    left: -30vh; /* Lo desplazamos hacia la izquierda para que asome como un semicírculo gigante */
+    width: 100vh; /* Base mucho más grande (casi el alto de la pantalla) */
+    height: 100vh;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    animation: latido-boom 3s ease-in-out infinite; 
+    z-index: 1;
+}
+
+/* Solo asegúrate de que el texto mantenga su z-index superior por si el círculo lo toca */
+#contenedor-texto-boom {
+    margin-left: 55vw; 
+    max-width: 500px;
+    z-index: 10;
+    position: relative; /* Agregado para respetar el z-index frente al círculo expandido */
+    animation: fadeInText 2s ease-out forwards;
+}
+
+#contenedor-texto-boom {
+    margin-left: 55vw; /* Posiciona el texto en la mitad derecha */
+    max-width: 500px;
+    z-index: 10;
+    animation: fadeInText 2s ease-out forwards; /* Animación Fade In */
+}
+
+#titulo-boom {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+#parrafo-boom {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-boom {
+    width: 200px;
+    height: 53px;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#boton-boom:hover {
+    background-color: #6E6E6E;
+    color: #FFFFFF;
+}
+
+#enlace-boom {
+    text-decoration: none;
+}
+
+
+/* --- 4ta Sección: Sparkles --- */
+#seccion-sparkles {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    color: #000000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+#contenedor-grafico-sparkles {
+    position: absolute;
+    left: -20vh;
+    width: 80vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#circulo-central-sparkles {
+    width: 60vh;
+    height: 60vh;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    animation: latido-acelerado 1s ease-in-out infinite; /* Corazón acelerado */
+}
+
+#orbita-sparkles {
+    width: 100vh;
+    height: 100vh;
+    border-radius: 50%;
+    border: 10px solid transparent; /* Órbita invisible en el resultado final */
+    position: absolute;
+    left: -10vh;
+}
+
+/* Satélites orbitando */
+#satelite-1, #satelite-2, #satelite-3 {
+    width: 120px;
+    height: 120px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: latido-acelerado 0.8s ease-in-out infinite;
+}
+
+/* Posiciones fijas en la órbita (recreando la referencia visual) */
+#satelite-1 { top: 5%; right: 15%; }
+#satelite-2 { top: 40%; right: -5%; }
+#satelite-3 { bottom: 10%; right: 15%; }
+
+#cuadrado-rotatorio-1, #cuadrado-rotatorio-2, #cuadrado-rotatorio-3 {
+    width: 60px;
+    height: 60px;
+    background-color: #FFFFFF;
+    animation: rotacion-rapida 2s linear infinite; /* Cuadrados rotando rápido */
+}
+
+#contenedor-texto-sparkles {
+    margin-left: 55vw; 
+    max-width: 500px;
+    z-index: 10;
+    animation: fadeInText 2s ease-out forwards;
+}
+
+#titulo-sparkles {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+#parrafo-sparkles {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-sparkles {
+    width: 200px;
+    height: 53px;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#boton-sparkles:hover {
+    background-color: #6E6E6E;
+}
+
+#enlace-sparkles {
+    text-decoration: none;
+}
+/* --- Animaciones para Bloque 3 --- */
+@keyframes serpenteo {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-40px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes ascender-agua {
+    0% { transform: translateY(110vh); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-20vh); opacity: 0; }
+}
+
+/* --- 5ta Sección: Sneaky Snake --- */
+#seccion-snake {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #FFFFFF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+#contenedor-texto-snake {
+    margin-left: 100px; /* Borde izquierdo de 100px */
+    max-width: 500px;
+    z-index: 10;
+}
+
+#titulo-snake {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+#parrafo-snake {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-snake {
+    width: 200px;
+    height: 53px;
+    background-color: #FFFFFF;
+    color: #1E1E1E; /* Letras grises oscuras como solicitaste */
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#boton-snake:hover {
+    background-color: #6E6E6E;
+    color: #FFFFFF;
+}
+
+#enlace-snake {
+    text-decoration: none;
+}
+
+#contenedor-figura-snake {
+    position: absolute;
+    right: -10vh; /* Esconde una parte para que parezca que asoman desde el borde */
     display: flex;
     flex-direction: column;
-    /* Por defecto, se ubica en la segunda columna del grid */
+    gap: 10px;
 }
 
-/* --- Galería de Proyectos --- */
-.galeria {
-    display: grid;
-    /* Define 3 columnas de igual tamaño */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em; /* Espacio entre las tarjetas */
+#cuerpo-snake-1, #cuerpo-snake-2, #cuerpo-snake-3, #cuerpo-snake-4 {
+    width: 35vh;
+    height: 35vh;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    animation: serpenteo 3s ease-in-out infinite;
 }
 
-/* --- Tarjetas Individuales --- */
-.tarjeta {
-    background-color: rgb(255, 255, 255);
+/* Retrasos escalonados para generar el efecto de la serpiente */
+#cuerpo-snake-1 { animation-delay: 0s; }
+#cuerpo-snake-2 { animation-delay: 0.3s; }
+#cuerpo-snake-3 { animation-delay: 0.6s; }
+#cuerpo-snake-4 { animation-delay: 0.9s; }
+
+
+/* --- 6ta Sección: Partículas --- */
+#seccion-particulas {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #FFFFFF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+#contenedor-particulas-ascendentes {
+    position: absolute;
+    left: 10vw;
+    width: 30vw;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --- Corrección 6ta Sección: Partículas Uniformes y Rápidas --- */
+#particula-1, #particula-2, #particula-3, #particula-4, #particula-5, #particula-6 {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 120px; /* Tamaño uniforme para todas */
+    height: 120px;
+    animation: ascender-agua linear infinite;
+}
+
+/* Duraciones reducidas (entre 1.5s y 3s) para que el "agua hierva" más rápido */
+#particula-1 { left: 0%; animation-duration: 2s; animation-delay: 0s; }
+#particula-2 { left: 40%; animation-duration: 2.5s; animation-delay: 0.5s; }
+#particula-3 { left: 20%; animation-duration: 1.8s; animation-delay: 1s; }
+#particula-4 { left: 70%; animation-duration: 2.2s; animation-delay: 0.2s; }
+#particula-5 { left: 10%; animation-duration: 2.8s; animation-delay: 0.8s; }
+#particula-6 { left: 55%; animation-duration: 1.5s; animation-delay: 1.5s; }
+
+#contenedor-texto-particulas {
+    margin-left: 55vw; /* Posicionado al lado derecho */
+    max-width: 500px;
+    z-index: 10;
+}
+
+#titulo-particulas {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+#parrafo-particulas {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-particulas {
+    width: 200px;
+    height: 53px;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    font-size: 14px;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tarjeta a {
-    /* El ancla ocupa todo el espacio de su columna en la galería */
-    display: block; /* Permite que el ancla ocupe todo el espacio */
-    width: 100%;
+#boton-particulas:hover {
+    background-color: #6E6E6E;
+    color: #FFFFFF;
+}
+
+#enlace-particulas {
     text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease-in-out;
+}
+/* --- Animaciones Bloque 4 --- */
+@keyframes ascender-diagonal {
+    0% { transform: translate(-10vw, 110vh) scale(1); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translate(40vw, -20vh) scale(0.5); opacity: 0; } /* Suben y se achican */
 }
 
-.tarjeta a:hover {
-    filter: brightness(70%); /* Aplica un filtro de brillo al 70% (más oscuro) */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+@keyframes mecer-viento {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); } /* Inclinación leve a la derecha */
+    100% { transform: rotate(0deg); }
 }
 
-.tarjeta img {
-    /* La imagen se ajusta al ancho del ancla */
+
+/* --- 7ma Sección: Juego de Semillas --- */
+#seccion-semillas {
     width: 100%;
-    display: block; /* Elimina espacios en blanco debajo de la imagen */
+    min-height: 100vh;
+    background-color: #505050; /* Gris solicitado */
+    color: #FFFFFF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-.tarjeta h3 {
-    text-align: center;
-    padding: 0.5em 0;
-    margin: 0;
+#contenedor-particulas-diagonales {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#particula-diag-1, #particula-diag-2, #particula-diag-3, #particula-diag-4 {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 60px; /* Partículas más pequeñas */
+    height: 60px;
+    animation: ascender-diagonal linear infinite;
+}
+
+#particula-diag-1 { left: 10%; animation-duration: 4s; animation-delay: 0s; }
+#particula-diag-2 { left: 30%; animation-duration: 5s; animation-delay: 1s; }
+#particula-diag-3 { left: 5%; animation-duration: 3.5s; animation-delay: 2s; }
+#particula-diag-4 { left: 20%; animation-duration: 4.5s; animation-delay: 0.5s; }
+
+#contenedor-diente-leon {
+    position: absolute;
+    left: -10vh; /* Ajustado al lado izquierdo */
+    bottom: -10vh;
+    height: 110vh;
+    transform-origin: bottom center; /* El eje de rotación está en la base (tallo) */
+    animation: mecer-viento 6s ease-in-out infinite;
+    z-index: 5;
+}
+
+#imagen-diente-leon {
+    height: 100%;
+    object-fit: contain;
+}
+
+#contenedor-texto-semillas {
+    margin-left: 55vw; /* Alineado a la derecha */
+    max-width: 500px;
+    z-index: 10;
+}
+
+#titulo-semillas {
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+#parrafo-semillas {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+#boton-semillas {
+    width: 200px;
+    height: 53px;
+    background-color: #1E1E1E; /* Fondo oscuro */
+    color: #FFFFFF; /* Letras blancas */
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#boton-semillas:hover {
+    background-color: #000000;
+}
+
+#enlace-semillas {
+    text-decoration: none;
 }
 
 
-/* --- Media Query para pantallas pequeñas --- */
-@media (max-width: 900px) {
-    
-    /* Ajusta los márgenes del body para aprovechar el espacio */
-    body {
-        margin: 20px;
-        padding: 1em;
-    }
+/* --- 8va Sección: Hero Invertido --- */
+#seccion-final {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    color: #000000; /* Texto en negro */
+    position: relative;
+    overflow: hidden;
+}
 
-    /* Cambia el contenedor principal a una sola columna */
-    #container {
-        grid-template-columns: 1fr;
-    }
+#titulo-final {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px;
+    font-weight: normal;
+    line-height: 1.1;
+    z-index: 10;
+}
 
-    /* Cambia la galería de proyectos a una sola columna */
-    .galeria {
-        grid-template-columns: 1fr;
-    }
+#autor-final {
+    position: absolute;
+    right: 100px;
+    bottom: 80px;
+    font-size: 24px;
+    z-index: 10;
+}
+
+/* Colores intercambiados según referencia */
+#rectangulo-claro-final {
+    position: absolute;
+    width: 35vw;
+    height: 60vh;
+    background-color: #D9D9D9; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#rectangulo-oscuro-final {
+    position: absolute;
+    width: 35vw;
+    height: 25vh;
+    background-color: #6E6E6E; 
+    bottom: 0;
+    left: 25vw;
+    z-index: 1;
+}
+
+/* --- Botón Volver (Interacción Compleja) --- */
+#enlace-volver {
+    position: absolute;
+    right: 15vw;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    z-index: 20;
+}
+
+#boton-volver {
+    width: 120px;
+    height: 120px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: latido-regular 2s ease-in-out infinite;
+    transition: all 0.4s ease; /* Suaviza el cambio de forma al pasar el mouse */
+}
+
+#texto-volver {
+    color: #000000; /* Mismo color que el fondo, por lo que es invisible */
+    font-size: 35px;
+    transition: color 0.4s ease;
+}
+
+/* Estado Hover: Se aplana, ensancha y revela el texto */
+#boton-volver:hover {
+    width: 200px;
+    border-radius: 30px; /* Pasa de círculo a rectángulo redondeado */
+    animation: none; /* Detiene la palpitación */
+}
+
+#boton-volver:hover #texto-volver {
+    color: #FFFFFF; /* Revela la palabra "Volver" */
+}
+
+#boton-volver:active #texto-volver {
+    color: transparent;
 }

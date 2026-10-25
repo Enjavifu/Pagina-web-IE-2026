@@ -1,133 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba repo</title>
+    <title>Portafolio Imagen Escrita - Enzo Vignolo</title>
+    
+    <!-- Importación correcta de tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ramabhadra&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
+<body id="cuerpo-principal">
 
-<!-- Inicio Body -->
+    <!-- 1ra Sección: Hero -->
+    <div id="seccion-inicio">
+        <div id="rectangulo-gris-oscuro"></div>
+        <div id="rectangulo-gris-claro"></div>
+        <h1 id="titulo-inicio">Imagen<br>Escrita<br>2026</h1>
+        <p id="autor-inicio">By Enzo Vignolo</p>
+    </div>
 
-<body>
-
-    <!-- Sección principal -->
-    <header>
-        <h1>Portafolio IE 2026</h1>
-    </header>
-
-    <!-- Contenedor General -->
-    <div id="container">
-
-        <!-- Contenedor lado izquierdo - Parrafo y botón -->
-        <div class="intro">
-            <p>
-                Imagen escrita es una asignatura que se centra en la intersección entre diseño,
-                la programación y arte generativo. Utilizando p5.js como herramienta principal, el curso explora los
-                fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.
-            </p>
-            <p>
-                A través del creative coding se hace énfasis en el pensamiento computacional como herramienta de diseño,
-                fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. La
-                integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como
-                complemento al proceso de diseño y programación
-            </p>
-
-
-            <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Javiera_Ruiz" target="_blank">
-                <button>
-                    wiki del proyecto
-                </button>
+    <!-- 2da Sección: Alexander Hamilton -->
+    <div id="seccion-hamilton">
+        <img id="imagen-hamilton" src="estrella-hamilton.png" alt="Figura Alexander Hamilton">
+        <div id="contenedor-texto-hamilton">
+            <h2 id="titulo-hamilton">Alexander<br>Hamilton</h2>
+            <p id="parrafo-hamilton">La creación de un primer proyecto en P5js, una prueba de las formas que se pueden crear, los colores aplicables y uso de las coordenadas</p>
+            <a id="enlace-hamilton" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_Hamilton_-_Enzo_Vignolo" target="_blank">
+                <button id="boton-hamilton">Acceder al proyecto</button>
             </a>
-
         </div>
+    </div>
 
-        <!-- Contenedor lado derecho -->
-        <div class="proyectos">
-            <h2>Mis proyectos p5js</h2>
+    <!-- 3ra Sección: ¡Boom! -->
+    <div id="seccion-boom">
+        <div id="circulo-boom"></div>
+        <div id="contenedor-texto-boom">
+            <h2 id="titulo-boom">¡Boom!</h2>
+            <p id="parrafo-boom">En la primera creación de un código complejo se partió desde un bosquejo inicial, pero con la ayuda de Inteligencia Artificial se llega a un resultado adelantado a la materia.</p>
+            <a id="enlace-boom" href="https://wiki.ead.pucv.cl/Encargo_3_IE_-_Enzo_Vignolo" target="_blank">
+                <button id="boton-boom">Acceder al proyecto</button>
+            </a>
+        </div>
+    </div>
 
-            <!-- Contenedor galería de proyectos -->
-            <div class="galeria">
-                <!-- tarjeta proyecto 1 -->
-                <div class="tarjeta">
-                    <a href="https://editor.p5js.org/jruiz-IE/full/_D3gtXvo_" target="_blank">
-                        <img src="assets/imagen1.png">
-                        </img>
-                        <h3>Tarea 1</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 2 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 2</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 3 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 3</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 4 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 4</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 5 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 5</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 6 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 6</h3>
-                    </a>
-                </div>
-
-                <!-- tarjeta proyecto 7 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 7</h3>
-                    </a>
-                </div>
-                
-                <!-- tarjeta proyecto 8 -->
-                <div class="tarjeta">
-                    <a href="">
-                        <img src="assets/imagen2.png">
-                        </img>
-                        <h3>Tarea 8</h3>
-                    </a>
-                </div>
-
+    <!-- 4ta Sección: Sparkles -->
+    <div id="seccion-sparkles">
+        <div id="contenedor-grafico-sparkles">
+            <div id="circulo-central-sparkles"></div>
+            <div id="orbita-sparkles">
+                <div id="satelite-1"><div id="cuadrado-rotatorio-1"></div></div>
+                <div id="satelite-2"><div id="cuadrado-rotatorio-2"></div></div>
+                <div id="satelite-3"><div id="cuadrado-rotatorio-3"></div></div>
             </div>
-
         </div>
+        <div id="contenedor-texto-sparkles">
+            <h2 id="titulo-sparkles">Sparkles</h2>
+            <p id="parrafo-sparkles">Se pasa a un código más “artesanal”, usando funciones ya vistas como “seno”, “coseno”, “frameCount”, variables, modos de ángulo que crean desde la rotación de las formas, como se agrandan, giran, parpadean, respiran, cambian de color y demás.</p>
+            <a id="enlace-sparkles" href="https://wiki.ead.pucv.cl/Encargo_4_IE_-_Enzo_Vignolo" target="_blank">
+                <button id="boton-sparkles">Acceder al proyecto</button>
+            </a>
+        </div>
+    </div>
 
+    <!-- 5ta Sección: Sneaky Snake -->
+    <div id="seccion-snake">
+        <div id="contenedor-texto-snake">
+            <h2 id="titulo-snake">Sneaky Snake</h2>
+            <p id="parrafo-snake">Se aplica funciones tanto de seguimiento de mouse, como sliders para generar una suerte de serpiente geométrica, pudiendo personalizar su tamaño.</p>
+            <a id="enlace-snake" href="https://wiki.ead.pucv.cl/Encargo_5_IE_-_Enzo_Vignolo" target="_blank">
+                <button id="boton-snake">Acceder al proyecto</button>
+            </a>
+        </div>
+        <div id="contenedor-figura-snake">
+            <div id="cuerpo-snake-1"></div>
+            <div id="cuerpo-snake-2"></div>
+            <div id="cuerpo-snake-3"></div>
+            <div id="cuerpo-snake-4"></div>
+        </div>
+    </div>
+
+    <!-- 6ta Sección: Partículas -->
+    <div id="seccion-particulas">
+        <div id="contenedor-particulas-ascendentes">
+            <div id="particula-1"></div>
+            <div id="particula-2"></div>
+            <div id="particula-3"></div>
+            <div id="particula-4"></div>
+            <div id="particula-5"></div>
+            <div id="particula-6"></div>
+        </div>
+        <div id="contenedor-texto-particulas">
+            <h2 id="titulo-particulas">Partículas</h2>
+            <p id="parrafo-particulas">En base a un ejemplo visto en clases se modifica y crea una repetición de partículas ascendentes con una forma personalizada, referencia a la serie Jojo’s Bizarre Adventure.</p>
+            <a id="enlace-particulas" href="#" target="_blank">
+                <button id="boton-particulas">Acceder al proyecto</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- 7ma Sección: Juego de semillas -->
+    <div id="seccion-semillas">
+        <div id="contenedor-particulas-diagonales">
+            <div id="particula-diag-1"></div>
+            <div id="particula-diag-2"></div>
+            <div id="particula-diag-3"></div>
+            <div id="particula-diag-4"></div>
+        </div>
+        <div id="contenedor-diente-leon">
+            <img id="imagen-diente-leon" src="diente-leon.png" alt="Diente de león en ángulo áureo">
+        </div>
+        <div id="contenedor-texto-semillas">
+            <h2 id="titulo-semillas">Juego de<br>semillas</h2>
+            <p id="parrafo-semillas">Como proyecto final se creó una composición que recopila distintas funciones y elementos aprendidos durante la unidad.</p>
+            <a id="enlace-semillas" href="https://wiki.ead.pucv.cl/Juegos_de_semillas_-_Entrega_U1_IE" target="_blank">
+                <button id="boton-semillas">Acceder al proyecto</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- 8va Sección: Hero Invertido (Final) -->
+    <div id="seccion-final">
+        <div id="rectangulo-claro-final"></div>
+        <div id="rectangulo-oscuro-final"></div>
+        <h1 id="titulo-final">Imagen<br>Escrita<br>2026</h1>
+        <p id="autor-final">By Enzo Vignolo</p>
+        <a id="enlace-volver" href="#cuerpo-principal">
+            <div id="boton-volver">
+                <span id="texto-volver">Volver</span>
+            </div>
+        </a>
     </div>
 
 </body>
-
 </html>
