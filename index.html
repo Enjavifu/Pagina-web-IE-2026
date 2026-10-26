@@ -15,6 +15,56 @@
 
 <body id="cuerpo-principal">
 
+    <!-- Encabezado Fijo -->
+    <nav id="encabezado-principal">
+        <!-- Casilla oculta que controla el despliegue del menú -->
+        <input type="checkbox" id="interruptor-indice">
+        
+        <!-- Botón que activa el checkbox -->
+        <label for="interruptor-indice" id="boton-indice">Indice</label>
+        
+        <!-- Enlaces adicionales del header -->
+        <a href="https://wiki.ead.pucv.cl/Imagen_Escrita_2026" target="_blank" id="link-wiki-general">Wiki Imagen escrita</a>
+        <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026_-_Enzo_Vignolo" target="_blank" id="link-wiki-proyecto">Wiki Proyecto</a>
+
+        <!-- Panel Desplegable del Índice -->
+        <div id="panel-desplegable">
+            
+            <a href="#seccion-hamilton" id="tarjeta-indice-1">
+                <!-- Puedes reutilizar tu PNG aquí -->
+                <img src="assets/estrella-hamilton.png" id="miniatura-1" alt="Hamilton">
+                <span id="texto-indice-1">Hamilton</span>
+            </a>
+
+            <a href="#seccion-boom" id="tarjeta-indice-2">
+                <img src="assets/Boom.png" id="miniatura-1" alt="Hamilton">
+                <span id="texto-indice-2">¡Boom!</span>
+            </a>
+
+            <a href="#seccion-sparkles" id="tarjeta-indice-3">
+                <img src="assets/Sparkle.png" id="miniatura-1" alt="Hamilton">
+                <span id="texto-indice-3">Sparkles</span>
+            </a>
+
+            <a href="#seccion-snake" id="tarjeta-indice-4">
+                <img src="assets/Sneaky snake.png" id="miniatura-1" alt="Hamilton">
+                <span id="texto-indice-4">Sneaky Snake</span>
+            </a>
+
+            <a href="#seccion-particulas" id="tarjeta-indice-5">
+                <img src="assets/Partículas.png" id="miniatura-1" alt="Hamilton">
+                <span id="texto-indice-5">Partículas</span>
+            </a>
+
+            <a href="#seccion-semillas" id="tarjeta-indice-6">
+                <!-- Puedes reutilizar tu PNG aquí -->
+                <img src="assets/diente-leon.png" id="miniatura-6" alt="Semillas">
+                <span id="texto-indice-6">Juego de semillas</span>
+            </a>
+            
+        </div>
+    </nav>
+
     <!-- 1ra Sección: Hero -->
     <div id="seccion-inicio">
         <div id="rectangulo-gris-oscuro"></div>
@@ -23,15 +73,39 @@
         <p id="autor-inicio">By Enzo Vignolo</p>
     </div>
 
-    <!-- 2da Sección: Alexander Hamilton -->
+    <div id="seccion-introduccion">
+    <h2 id="titulo-intro">Introducción</h2>
+    
+    <div id="parrafo1-intro">
+        <p id="texto-intro1">Esta es la entrega final de la asignatura "Imagen Escrita" realizada en el segundo semestre del año 2026, en la cual se tuvo la introducción a la programación como diseñadoras y diseñadores, partiendo con el uso de el sitio web "P5js", donde se realizaron los primeros encargos acercamiento al lenguaje javascript.</p>
+    </div>
+    
+    <div id="parrafo2-intro">
+        <p id="texto-intro2">Para esta última entrega se tuvo que hacer uso de archivos HTML y CSS, los cuales fueron editados en base a un "Wireframe" inicial, el cual se le hizo entrega a un asistente de Inteligencia Artificial para plasmarlo en código, el cual tuvo que ser supervisado para dar un resultado acorde con la visión de diseño que se tuvo.</p>
+    </div>
+</div>
+
+<!-- 2da Sección: Alexander Hamilton -->
     <div id="seccion-hamilton">
-        <img id="imagen-hamilton" src="estrella-hamilton.png" alt="Figura Alexander Hamilton">
+        <img id="imagen-hamilton" src="assets/estrella-hamilton.png" alt="Figura Alexander Hamilton">
+        
         <div id="contenedor-texto-hamilton">
             <h2 id="titulo-hamilton">Alexander<br>Hamilton</h2>
             <p id="parrafo-hamilton">La creación de un primer proyecto en P5js, una prueba de las formas que se pueden crear, los colores aplicables y uso de las coordenadas</p>
-            <a id="enlace-hamilton" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_Hamilton_-_Enzo_Vignolo" target="_blank">
-                <button id="boton-hamilton">Acceder al proyecto</button>
-            </a>
+            
+            <!-- Contenedor para alinear ambos botones uno al lado del otro -->
+            <div id="contenedor-botones-hamilton">
+                <!-- Botón original de redirección -->
+                <a id="enlace-hamilton" href="https://wiki.ead.pucv.cl/Encargo_1_IE_-_Hamilton_-_Enzo_Vignolo" target="_blank">
+                    <button id="boton-hamilton">Acceder al proyecto</button>
+                </a>
+
+                <!-- NUEVO: Botón de música que reproduce el audio al hacer clic -->
+                <button id="boton-audio-hamilton" onclick="document.getElementById('audio-hamilton').play()">Alexander Hamilton</button>
+                
+                <!-- Etiqueta de audio oculta que carga tu archivo desde assets -->
+                <audio id="audio-hamilton" src="assets/audio-hamilton.mp3"></audio>
+            </div>
         </div>
     </div>
 
@@ -111,7 +185,7 @@
             <div id="particula-diag-4"></div>
         </div>
         <div id="contenedor-diente-leon">
-            <img id="imagen-diente-leon" src="diente-leon.png" alt="Diente de león en ángulo áureo">
+            <img id="imagen-diente-leon" src="assets/diente-leon.png" alt="Diente de león en ángulo áureo">
         </div>
         <div id="contenedor-texto-semillas">
             <h2 id="titulo-semillas">Juego de<br>semillas</h2>

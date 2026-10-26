@@ -10,6 +10,7 @@
     font-family: "Ramabhadra", sans-serif;
     overflow-x: hidden; 
     scroll-behavior: smooth; 
+    text-align: justify;
 }
 
 /* 2. Archivo Black EXCLUSIVAMENTE para los títulos */
@@ -25,6 +26,8 @@ button {
 
 /* --- 1ra Sección: Hero --- */
 #seccion-inicio {
+    /* ... tus reglas anteriores ... */
+    padding-top: 70px; /* Empuja el contenido debajo del header */
     width: 100%;
     height: 100vh; /* Ocupa el 100% del alto de la pantalla */
     background-color: #000000;
@@ -72,10 +75,27 @@ button {
     z-index: 1;
 }
 
+#seccion-introduccion {
+    width: 100%;
+    min-height: 60vh; /* Ocupa toda la altura de la pantalla como las demás secciones */
+    background-color: #FFFFFF; /* Fondo blanco consistente */
+    color: #000000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 120px 100px; /* Margen superior/inferior y los 100px laterales solicitados */
+    align-content: center; /* Centra verticalmente los elementos dentro del grid */
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.4; /* Aumentado ligeramente para mejor lectura en bloques largos */
+    z-index: 10;
+    position: relative;
+}
+
 /* --- 2da Sección: Alexander Hamilton --- */
 #seccion-hamilton {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #FFFFFF; /* Cambio a fondo blanco */
     color: #000000;
     position: relative;
@@ -87,13 +107,16 @@ button {
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 90vh; /* Ajustable según el tamaño de tu PNG */
+    height: 80vh; /* Ajustable según el tamaño de tu PNG */
     object-fit: contain;
     z-index: 1;
+    
+    /* Nueva propiedad CSS añadida para la sombra de la silueta */
+    filter: drop-shadow(25px 15px 15px rgba(0, 0, 0, 0.3));
 }
 
 #contenedor-texto-hamilton {
-    margin-left: 100px; /* Borde izquierdo de 100px */
+    margin-left: 300px; /* Borde izquierdo de 100px */
     max-width: 500px;
     z-index: 10;
 }
@@ -157,7 +180,7 @@ button {
 /* --- 3ra Sección: ¡Boom! --- */
 #seccion-boom {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #000000;
     color: #FFFFFF;
     position: relative;
@@ -237,7 +260,7 @@ button {
 /* --- 4ta Sección: Sparkles --- */
 #seccion-sparkles {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #FFFFFF;
     color: #000000;
     position: relative;
@@ -354,7 +377,7 @@ button {
 /* --- 5ta Sección: Sneaky Snake --- */
 #seccion-snake {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #000000;
     color: #FFFFFF;
     position: relative;
@@ -364,7 +387,7 @@ button {
 }
 
 #contenedor-texto-snake {
-    margin-left: 100px; /* Borde izquierdo de 100px */
+    margin-left: 300px; /* Borde izquierdo de 100px */
     max-width: 500px;
     z-index: 10;
 }
@@ -428,9 +451,9 @@ button {
 /* --- 6ta Sección: Partículas --- */
 #seccion-particulas {
     width: 100%;
-    min-height: 100vh;
-    background-color: #000000;
-    color: #FFFFFF;
+    min-height: 80vh;
+    background-color: #FFFFFF;
+    color: #000000;
     position: relative;
     display: flex;
     align-items: center;
@@ -448,7 +471,7 @@ button {
 /* --- Corrección 6ta Sección: Partículas Uniformes y Rápidas --- */
 #particula-1, #particula-2, #particula-3, #particula-4, #particula-5, #particula-6 {
     position: absolute;
-    background-color: #FFFFFF;
+    background-color: #000000;
     border-radius: 50%;
     width: 120px; /* Tamaño uniforme para todas */
     height: 120px;
@@ -484,8 +507,8 @@ button {
 #boton-particulas {
     width: 200px;
     height: 53px;
-    background-color: #FFFFFF;
-    color: #1E1E1E;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
     font-size: 14px;
     border: none;
     border-radius: 8px;
@@ -494,8 +517,8 @@ button {
 }
 
 #boton-particulas:hover {
-    background-color: #6E6E6E;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #6E6E6E;
 }
 
 #enlace-particulas {
@@ -519,7 +542,7 @@ button {
 /* --- 7ma Sección: Juego de Semillas --- */
 #seccion-semillas {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #505050; /* Gris solicitado */
     color: #FFFFFF;
     position: relative;
@@ -694,4 +717,145 @@ button {
 
 #boton-volver:active #texto-volver {
     color: transparent;
+}
+
+/* --- ENCABEZADO PRINCIPAL (HEADER) --- */
+#encabezado-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 40px;
+    z-index: 1000; /* Asegura que el header esté por encima de todo */
+    border-bottom: 2px solid #1E1E1E;
+}
+
+/* Ocultar el checkbox funcional */
+#interruptor-indice {
+    display: none;
+}
+
+/* Estilos de los enlaces del header */
+#boton-indice, 
+#link-wiki-general, 
+#link-wiki-proyecto {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Efecto de subrayado al pasar el mouse (referencia mdn/x) */
+#boton-indice:hover, 
+#link-wiki-general:hover, 
+#link-wiki-proyecto:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px; /* Separa la línea del texto */
+    text-decoration-thickness: 3px;
+}
+
+/* --- PANEL DESPLEGABLE (ÍNDICE) --- */
+#panel-desplegable {
+    position: absolute;
+    top: 70px; /* Justo debajo del header */
+    left: 0;
+    width: 100%;
+    height: 400px; /* Altura del panel desplegado */
+    background-color: #1E1E1E;
+    display: flex;
+    /* Animación de deslizamiento vertical */
+    transform: translateY(-120%); 
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 999;
+    border-bottom: 2px solid #1E1E1E;
+}
+
+/* La magia: Cuando el checkbox está marcado (clic en Indice), el panel baja */
+#interruptor-indice:checked ~ #panel-desplegable {
+    transform: translateY(0);
+}
+
+/* --- TARJETAS DEL ÍNDICE --- */
+/* Cada tarjeta ocupa el mismo ancho (flex: 1) basándonos en tu boceto */
+#tarjeta-indice-1, #tarjeta-indice-2, #tarjeta-indice-3, 
+#tarjeta-indice-4, #tarjeta-indice-5, #tarjeta-indice-6 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinea el texto abajo */
+    padding: 20px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+    border-right: 1px solid #FFFFFF; /* Líneas divisorias sutiles */
+}
+
+/* Efecto Hover para las tarjetas tipo carrusel */
+#tarjeta-indice-1:hover, #tarjeta-indice-2:hover, #tarjeta-indice-3:hover, 
+#tarjeta-indice-4:hover, #tarjeta-indice-5:hover, #tarjeta-indice-6:hover {
+    filter: brightness(0.7); /* Oscurece la tarjeta al pasar el mouse */
+}
+
+/* Colores de fondo específicos según el boceto de columnas */
+#tarjeta-indice-1 { background-color: #FFFFFF; }
+#tarjeta-indice-2 { background-color: #000000; }
+#tarjeta-indice-3 { background-color: #FFFFFF; }
+#tarjeta-indice-4 { background-color: #000000; }
+#tarjeta-indice-5 { background-color: #000000; }
+#tarjeta-indice-6 { background-color: #505050; border-right: none; }
+
+/* Tipografía de los títulos inferiores de las tarjetas */
+#texto-indice-1, #texto-indice-2, #texto-indice-3, 
+#texto-indice-4, #texto-indice-5, #texto-indice-6 {
+    font-family: "Ramabhadra", sans-serif;
+    font-size: 22px;
+    z-index: 10;
+}
+
+/* Colores de texto contrastantes */
+#texto-indice-1, #texto-indice-3 { color: #000000; }
+#texto-indice-2, #texto-indice-4, #texto-indice-5, #texto-indice-6 { color: #FFFFFF; }
+
+/* Ajuste de las imágenes miniatura dentro de las tarjetas */
+#miniatura-1, #miniatura-6 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* Contenedor flexible para poner los botones en fila */
+#contenedor-botones-hamilton {
+    display: flex;
+    gap: 15px; /* Espacio entre el botón del proyecto y el de música */
+    align-items: center;
+}
+
+/* Estilo para el nuevo botón de audio (haciendo juego con el diseño) */
+#boton-audio-hamilton {
+    width: 160px;
+    height: 53px;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 2px solid #1E1E1E;
+    font-family: "Ramabhadra", sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#boton-audio-hamilton:hover {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
 }
